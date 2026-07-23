@@ -3,9 +3,7 @@ keys/
 .env
 
 /postgres/
-/src/generated/prisma
 
-/generated/prisma
 .agents
 .claude
 .windsurf
