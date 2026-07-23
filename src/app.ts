@@ -1,4 +1,4 @@
-import { Server } from './presentation/server';
+import { Server } from '../src/presentation/server';
 import { AppRoutes } from './presentation/routes';
 import { envs } from './config/envs';
 
