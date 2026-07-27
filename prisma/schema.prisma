@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output = "../src/generated"
 }
 
 datasource db {
@@ -11,5 +10,5 @@ model todo {
   id          Int       @id @default(autoincrement())
   text        String    @db.VarChar
   completedAt DateTime? @db.Timestamp()
-  
+
 }
