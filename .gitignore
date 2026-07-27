@@ -2,9 +2,5 @@ node_modules/
 keys/
 .env
 
-/postgres/
-
-.agents
-.claude
-.windsurf
-skills-lock.json
+/postgres
+dist/
