@@ -7,7 +7,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "dist/",
-    "module": "esnext",
+    "module": "node16",
     "target": "es2022",
     "types": ["jest", "node"],
     "esModuleInterop": true,
@@ -19,7 +19,7 @@
     "jsx": "react-jsx",
     "moduleDetection": "auto",
     "skipLibCheck": true,
-    "moduleResolution": "Bundler",
+    "moduleResolution": "node16",
     "allowImportingTsExtensions": true,
     "noEmit": true
   }
