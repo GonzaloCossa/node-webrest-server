@@ -3,6 +3,7 @@ import { CreateTodoDTO } from '../../domain/dtos/todos/create-todo.dto';
 import { TodoEntity } from '../../domain/entities/todo.entity';
 import { UpdateTodoDTO } from '../../domain/dtos/todos/update-todo.dto';
 import { prisma } from '../../data/postgres/index';
+import { CustomError } from '../../domain/errors/custom.error';
 
 export class TodoDatasourceImpl implements TodoDatasource {
     async create(createTodoDto: CreateTodoDTO): Promise<TodoEntity> {
@@ -25,7 +26,7 @@ export class TodoDatasourceImpl implements TodoDatasource {
             }
         });
 
-        if (!todoDB) throw `Todo with id ${id} not found`;
+        if (!todoDB) throw new CustomError(`Todo with id ${id} not found`, 404);
         return TodoEntity.fromObject(todoDB);
     }
 

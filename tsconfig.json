@@ -1,26 +1,24 @@
 {
   "exclude": ["node_modules", "dist", "src/**/*.test.ts"],
-  "include": [
-    "src/**/*.ts",
-    "tests/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", "tests/**/*.ts"],
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "dist/",
-    "module": "node16",
-    "target": "es2022",
+    "outDir": "dist",
+
+    "target": "ES2022",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "ignoreDeprecations": "6.0",
+
     "types": ["jest", "node"],
     "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "noUncheckedIndexedAccess": true,
-    "strict": true,
-    "jsx": "react-jsx",
-    "moduleDetection": "auto",
-    "skipLibCheck": true,
-    "moduleResolution": "node16",
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+
+    "noUncheckedIndexedAccess": true
   }
 }
