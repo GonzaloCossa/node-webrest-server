@@ -21,7 +21,7 @@ export class UpdateTodoDTO {
 
         if (!id || isNaN(Number(id))) {
             return ['id must be a valid number'];
-        }
+        };
 
         if (completedAt) {
             newCompletedAt = new Date(completedAt);
