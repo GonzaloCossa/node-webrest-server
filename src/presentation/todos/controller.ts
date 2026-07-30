@@ -6,6 +6,7 @@ import { GetTodo } from '../../domain/use-cases/todo/get-todo';
 import { CreateTodo } from '../../domain/use-cases/todo/create-todo';
 import { UpdateTodo } from '../../domain/use-cases/todo/update-todo';
 import { DeleteTodo } from '../../domain/use-cases/todo/delete-todo';
+import { CustomError } from '../../domain/errors/custom.error';
 
 export class TodosController {
 
@@ -13,6 +14,13 @@ export class TodosController {
     constructor(
         private readonly todoRepository: TodoRepository,
     ) { };
+
+    private handleError = (res: Response, error: unknown) => {
+        if(error instanceof CustomError){
+            res.status(error.statusCode).json({error: error.message});
+            return;
+        }
+    }
 
     public getTodos = (req: Request, res: Response) => {
         new GetTodos(this.todoRepository)
