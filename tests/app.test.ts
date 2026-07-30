@@ -20,5 +20,5 @@ describe('Should call server start with', () => {
         });
 
         expect(Server.prototype.start).toHaveBeenCalled();
-});
+    });
 });
